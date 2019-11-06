@@ -9,12 +9,19 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.cache
+
+# Extras I've Added - AA
+*.csproj.nuget.cache
+*.csprojAssemblyReference.cache
+*.assets.cache
+*.assets.json
+*.csproj.nuget.dgspec.json
 *.json
 *.ide
 *.lock
-*ide-shm
-*ide-wal
+*.ide-shm
+*.ide-wal
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
