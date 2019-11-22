@@ -39,7 +39,7 @@ namespace NASA_Program
         double velocity; // m/s
 
         double launchHeight; // km
-        const double launchAngle = 0; // degree
+        const double launchAngle = 0; // degree, needs to be 0 (our pod isn't being "shot" out of a module in orbit, it is being dropped downward)
                                       //                       (of course it will need some kind of force to push it down initially, though)
         double impactAngle; // degree
 
