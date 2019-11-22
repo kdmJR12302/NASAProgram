@@ -1,11 +1,13 @@
 ﻿using System;
 
 /*
- * 
- * 
- * 
- * 
- * 
+ * For this program, we'll be using the METRIC system
+ * You can add another class declaration, or you can make a separate namespace (basically separate class, like java) and import it into this one
+ * The locations could change though if we determine that there needs to be more organization
+ * You may add elements to the properties classes (pod properties, moon properties), but please don't change the names of the ones we
+ * already have in there
+ * Please comment everything you put in here
+ * That's it for now
  */
 
 
@@ -38,6 +40,7 @@ namespace NASA_Program
 
         double launchHeight; // km
         const double launchAngle = 0; // degree
+                                      //                       (of course it will need some kind of force to push it down initially, though)
         double impactAngle; // degree
 
     }
