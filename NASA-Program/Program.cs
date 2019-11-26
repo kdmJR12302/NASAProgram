@@ -3,7 +3,7 @@
 /*
  * For this program, we'll be using the METRIC system
  * You can add another class declaration, or you can make a separate namespace (basically separate class, like java) and import it into this one
- * The locations could change though if we determine that there needs to be more organization
+ * The locations could change though if we or you determine that there needs to be more organization
  * You may add elements to the properties classes (pod properties, moon properties), but please don't change the names of the ones we
  * already have in there
  * Please comment everything you put in here
@@ -30,9 +30,7 @@ namespace NASA_Program
     class PodProperties
     {
 
-        //
-
-        double podMass = 3315.3576;
+        double podMass = 3315.3576; // kg
         double velocityX; // m/s
         double velocityY; // m/s
         double podRadius; // m
