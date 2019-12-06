@@ -1,62 +1,57 @@
 ﻿using System;
-
-/*
- * For this program, we'll be using the METRIC system
- * You can add another class declaration, or you can make a separate namespace (basically separate class, like java) and import it into this one
- * The locations could change though if we or you determine that there needs to be more organization
- * You may add elements to the properties classes (pod properties, moon properties), but please don't change the names of the ones we
- * already have in there
- * Please comment everything you put in here
- * That's it for now
- */
+using System.Reflection.Metadata;
 
 
-namespace NASA_Program
+
+
+
+namespace NASATrajectory
 {
     class Program
     {
         static void Main(string[] args)
         {
+            string str;
+            double h = 0;
+            double x = 0;
+            double a = 0;
+            double v0 = 0;
+            double t = 0;
+            double g = 9.8;
+
+            Console.WriteLine("enter height: ");
+            str = Console.ReadLine();
+            h = double.Parse(str);
 
 
-            
+            Console.WriteLine("enter angle: ");
+            str = Console.ReadLine();
+            a = double.Parse(str);
+
+            Console.WriteLine("enter v0: ");
+            str = Console.ReadLine();
+            v0 = double.Parse(str);
+
+            a = (a * (Math.PI)) / 180;
+
+            double initialXvelocity = Math.Cos(a) * v0;
+            double initialYvelocity = Math.Sin(a) * v0;
+
+            t = (v0 * Math.Sin(a) + Math.Sqrt(Math.Pow(v0 * Math.Sin(a), 2) + 2 * g * h)) / g;
+            x = initialXvelocity * t;
+
+
+
+            Console.WriteLine("Initial velocity: " + v0);
+            Console.WriteLine("Initial Xvelocity: " + initialXvelocity);
+            Console.WriteLine("Initial Yvelocity: " + initialYvelocity);
+            Console.WriteLine("Angle of launch: " + (a / (Math.PI) * 180));
+            Console.WriteLine("Initial height: " + h);
+            Console.WriteLine("time is: " + t);
+            Console.WriteLine("distance is: " + x);
 
 
 
         }
     }
-
-
-    class PodProperties
-    {
-
-        double podMass = 3315.3576; // kg
-        double velocityX; // m/s
-        double velocityY; // m/s
-        double podRadius; // m
-        double velocity; // m/s
-
-        double launchHeight; // km
-        const double launchAngle = 0; // degree, needs to be 0 (our pod isn't being "shot" out of a module in orbit, it is being dropped downward)
-                                      //                       (of course it will need some kind of force to push it down initially, though)
-        double impactAngle; // degree
-
-    }
-
-
-    class MoonProperties
-    {
-        const double moonRadius = 1737.12591; // km
-        const double moonCircumference = 10921.01; // km
-        double moonMass = 7.342 * Math.Pow(10, 22); // kg
-        const double moonGravity = 1.625; // m/s
-
-
-        const double moonMinOrbitV = 0.970; // km/s
-        const double moonMaxOrbitV = 1.082; // km/s
-
-
-    }
-
-
 }
