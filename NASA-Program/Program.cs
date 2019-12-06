@@ -12,12 +12,12 @@ namespace NASATrajectory
         static void Main(string[] args)
         {
             string str;
-            double h = 0;
-            double x = 0;
-            double a = 0;
-            double v0 = 0;
-            double t = 0;
-            double g = 9.8;
+            double h = 0;                                                               //user inputted height
+            double x = 0;                                                               //horizontal distance
+            double a = 0;                                                               //user inputted angle
+            double v0 = 0;                                                              //initial velocity
+            double t = 0;                                                               //time of flight
+            double g = 9.8;                                                             //gravity
 
             Console.WriteLine("enter height: ");
             str = Console.ReadLine();
@@ -34,8 +34,8 @@ namespace NASATrajectory
 
             a = (a * (Math.PI)) / 180;
 
-            double initialXvelocity = Math.Cos(a) * v0;
-            double initialYvelocity = Math.Sin(a) * v0;
+            double initialXvelocity = Math.Cos(a) * v0;                                 //calculating initial horizontal velocity
+            double initialYvelocity = Math.Sin(a) * v0;                                 //calculating initial vertical velocity
 
             t = (v0 * Math.Sin(a) + Math.Sqrt(Math.Pow(v0 * Math.Sin(a), 2) + 2 * g * h)) / g;
             x = initialXvelocity * t;
